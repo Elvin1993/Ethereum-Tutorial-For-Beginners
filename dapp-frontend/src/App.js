@@ -7,6 +7,7 @@ function App() {
 
 	return (
 		<div className="App">
+			<h1>COCO Wallet</h1>
 			<TinTinToken></TinTinToken>
 		</div>
 	);

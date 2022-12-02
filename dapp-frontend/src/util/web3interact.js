@@ -1,7 +1,7 @@
 // 获取env variable
 require('dotenv').config();
 const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY;
-
+console.log(alchemyKey)
 
 // 创建 web3 provider.
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
@@ -11,7 +11,7 @@ const web3 = createAlchemyWeb3(alchemyKey);
 //    1. contract abi
 //····2. contract address， 去告诉web3.js 库 如何跟我们智能合约进行交互。
 const contractABI = require("../assets/tintinToken-abi.json");
-const contractAddress = "0x4317E7f5B1765981DEA2329Ce777BeFbBAE19B7C";
+const contractAddress = "0xE2c5651814a0cd521DD073d2f1124F5d2Bf21342";
 export const TinTinTokenContract = new web3.eth.Contract(
 	contractABI,
 	contractAddress
@@ -57,7 +57,7 @@ export const connectWallet = async () => {
 					<p>
 						{" "}
 						🦊{" "}
-						<a target="_blank" href={`https://metamask.io/download.html`}>
+						<a target="_blank" href={`https://metamask.io/download.html`} rel="noreferrer">
 							You must install Metamask, a virtual Ethereum wallet, in your
 							browser.
 						</a>
@@ -99,7 +99,7 @@ export const getCurrentWalletConnected = async () => {
 					<p>
 						{" "}
 						🦊{" "}
-						<a target="_blank" href={`https://metamask.io/download.html`}>
+						<a target="_blank" href={`https://metamask.io/download.html`} rel="noreferrer">
 							You must install Metamask, a virtual Ethereum wallet, in your
 							browser.
 						</a>
@@ -145,7 +145,7 @@ export const transferToken = async (fromAddress, toAddress) => {
 			status: (
 				<span>
 					✅{" "}
-					<a target="_blank" href={`https://goerli.etherscan.io/tx/${txHash}`}>
+					<a target="_blank" href={`https://goerli.etherscan.io/tx/${txHash}`} rel="noreferrer">
 						View the status of your transaction on Etherscan!
 					</a>
 					<br />
